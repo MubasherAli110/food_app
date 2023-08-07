@@ -23,3 +23,21 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+
+  fonts:
+   - family: SofiaPro
+     fonts:
+      - asset: assets/fonts/SofiaPro-Italic.ttf
+
+   - family: SofiaProb
+     fonts:
+      - asset: assets/fonts/SofiaProb-Bold.ttf
+
+   - family: SofiaProR
+     fonts:
+      - asset: assets/fonts/SofiaProR-Regular.ttf
+
+   
+
+    
+

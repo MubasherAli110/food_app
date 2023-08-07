@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/pages/home_page.dart';
 import 'package:food_app/pages/resset_password_page.dart';
 import 'package:food_app/pages/sign_up_page.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -143,7 +144,11 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(28.r),
                       ),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ));
+                        },
                         style: ButtonStyle(
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
