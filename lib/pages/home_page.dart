@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_app/widgets/home_drawer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'food_one_page.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -355,25 +357,27 @@ class _HomePageState extends State<HomePage> {
 
 ///////////
 
-                        SizedBox(width: 48.w),
-                        TextButton(
-                            onPressed: () {},
-                            child: Row(
-                              children: [
-                                Text(
-                                  "View All",
-                                  style: TextStyle(
-                                    fontFamily: "SofiaProR",
-                                    fontSize: 13.sp,
-                                    color: const Color(0xffF56844),
-                                  ),
+                        SizedBox(width: 55.w),
+                        InkWell(
+                          // onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ,)),
+                          child: Row(
+                            children: [
+                              Text(
+                                "View All",
+                                style: TextStyle(
+                                  fontFamily: "SofiaProR",
+                                  fontSize: 13.sp,
+                                  color: const Color(0xffF56844),
                                 ),
-                                const Icon(
-                                  Icons.arrow_forward_ios_rounded,
-                                  color: Color(0xffF56844),
-                                )
-                              ],
-                            ))
+                              ),
+                              const Icon(
+                                Icons.arrow_forward_ios_rounded,
+                                size: 15,
+                                color: Color(0xffF56844),
+                              )
+                            ],
+                          ),
+                        )
                       ],
                     ),
 
@@ -386,229 +390,244 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           SizedBox(
                             height: 270.h,
-                            child: Card(
-                              elevation: 5,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15.r)),
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Stack(children: [
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(15.r),
-                                            topRight: Radius.circular(
-                                                15.r)), // Image border
-                                        child: Image.asset(
-                                          "assets/images/image1.png",
-                                          fit: BoxFit.fill,
+                            child: InkWell(
+                              onTap: () =>
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const FoodOnePage(),
+                              )),
+                              child: Card(
+                                elevation: 5,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15.r)),
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Stack(children: [
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(15.r),
+                                              topRight: Radius.circular(
+                                                  15.r)), // Image border
+                                          child: Image.asset(
+                                            "assets/images/image1.png",
+                                            fit: BoxFit.fill,
+                                          ),
                                         ),
-                                      ),
-                                      Positioned(
-                                        left: 10,
-                                        child: Row(
-                                          children: [
-                                            Card(
-                                              shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100.r)),
-                                              child: Padding(
-                                                padding: EdgeInsets.all(8.r),
-                                                child: Row(
-                                                  children: [
-                                                    Text(
-                                                      "4.5",
-                                                      style: TextStyle(
-                                                        fontFamily: "SofiaProb",
-                                                        fontSize: 11.sp,
-                                                        color: const Color(
-                                                            0xff000000),
+                                        Positioned(
+                                          left: 10,
+                                          child: Row(
+                                            children: [
+                                              Card(
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            100.r)),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(8.r),
+                                                  child: Row(
+                                                    children: [
+                                                      Text(
+                                                        "4.5",
+                                                        style: TextStyle(
+                                                          fontFamily:
+                                                              "SofiaProb",
+                                                          fontSize: 11.sp,
+                                                          color: const Color(
+                                                              0xff000000),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    SizedBox(width: 4.w),
-                                                    SizedBox(
-                                                      height: 15.h,
-                                                      width: 15.w,
-                                                      child: Icon(
-                                                        Icons.star,
-                                                        color: const Color(
-                                                            0xffFFC529),
-                                                        size: 15.sp,
+                                                      SizedBox(width: 4.w),
+                                                      SizedBox(
+                                                        height: 15.h,
+                                                        width: 15.w,
+                                                        child: Icon(
+                                                          Icons.star,
+                                                          color: const Color(
+                                                              0xffFFC529),
+                                                          size: 15.sp,
+                                                        ),
                                                       ),
-                                                    ),
 
-///////////
+                                                      ///////////
 
-                                                    Text(
-                                                      "(25+)",
-                                                      style: TextStyle(
-                                                        fontFamily: "SofiaPror",
-                                                        fontSize: 8.sp,
-                                                        color: const Color(
-                                                            0xff9796A1),
+                                                      Text(
+                                                        "(25+)",
+                                                        style: TextStyle(
+                                                          fontFamily:
+                                                              "SofiaPror",
+                                                          fontSize: 8.sp,
+                                                          color: const Color(
+                                                              0xff9796A1),
+                                                        ),
                                                       ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
+                                              SizedBox(width: 110.w),
+                                              Image.asset(
+                                                "assets/images/heart.png",
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ]),
+
+                                      ///////////
+
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  "McDonald’s",
+                                                  style: TextStyle(
+                                                    fontFamily: "SofiaProb",
+                                                    fontSize: 15.sp,
+                                                  ),
+                                                ),
+                                                SizedBox(width: 10.w),
+
+                                                ///////////
+
+                                                Container(
+                                                  height: 15.h,
+                                                  width: 15.w,
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                          color:
+                                                              Color(0xff029094),
+                                                          shape:
+                                                              BoxShape.circle),
+                                                  child: const Icon(
+                                                    Icons.done,
+                                                    color: Colors.white,
+                                                    size: 10,
+                                                  ),
+                                                )
+                                              ],
                                             ),
-                                            SizedBox(width: 110.w),
-                                            Image.asset(
-                                              "assets/images/heart.png",
+
+                                            ///////////
+
+                                            Row(
+                                              children: [
+                                                Image.asset(
+                                                  "assets/images/delivery.png",
+                                                ),
+                                                SizedBox(width: 6.w),
+                                                Text(
+                                                  "Free delivery",
+                                                  style: TextStyle(
+                                                    fontFamily: "SofiaProR",
+                                                    fontSize: 12.sp,
+                                                    color: Color(0xff7E8392),
+                                                  ),
+                                                ),
+                                                SizedBox(width: 17.w),
+                                                Icon(
+                                                  Icons.access_time_rounded,
+                                                  color: Color(0xffFE724C),
+                                                  size: 15.sp,
+                                                ),
+                                                SizedBox(width: 6.w),
+                                                Text(
+                                                  "10-15 mins",
+                                                  style: TextStyle(
+                                                    fontFamily: "SofiaProR",
+                                                    fontSize: 12.sp,
+                                                    color: Color(0xff7E8392),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
+
+                                            ///////////
+
+                                            SizedBox(height: 10),
+                                            Row(
+                                              children: [
+                                                Container(
+                                                  height: 22.h,
+                                                  width: 54.w,
+                                                  decoration: BoxDecoration(
+                                                      color: Color(0xffF6F6F6),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5.r)),
+                                                  child: Center(
+                                                    child: Text(
+                                                      "Burger",
+                                                      style: TextStyle(
+                                                        fontFamily: "SofiaProR",
+                                                        fontSize: 12.sp,
+                                                        color:
+                                                            Color(0xff7E8392),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(width: 8.w),
+
+                                                /////////
+                                                Container(
+                                                  height: 22.h,
+                                                  width: 60.w,
+                                                  decoration: BoxDecoration(
+                                                      color: Color(0xffF6F6F6),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5.r)),
+                                                  child: Center(
+                                                    child: Text(
+                                                      "Chicken",
+                                                      style: TextStyle(
+                                                        fontFamily: "SofiaProR",
+                                                        fontSize: 12.sp,
+                                                        color:
+                                                            Color(0xff7E8392),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(width: 8.w),
+
+                                                /////////
+                                                Container(
+                                                  height: 22.h,
+                                                  width: 70.w,
+                                                  decoration: BoxDecoration(
+                                                      color: Color(0xffF6F6F6),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5.r)),
+                                                  child: Center(
+                                                    child: Text(
+                                                      "Fast Food",
+                                                      style: TextStyle(
+                                                        fontFamily: "SofiaProR",
+                                                        fontSize: 12.sp,
+                                                        color:
+                                                            Color(0xff7E8392),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(width: 8.w),
+
+                                                /////////
+                                              ],
+                                            )
                                           ],
                                         ),
-                                      ),
+                                      )
                                     ]),
-
-///////////
-
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Row(
-                                            children: [
-                                              Text(
-                                                "McDonald’s",
-                                                style: TextStyle(
-                                                  fontFamily: "SofiaProb",
-                                                  fontSize: 15.sp,
-                                                ),
-                                              ),
-                                              SizedBox(width: 10.w),
-
-///////////
-
-                                              Container(
-                                                height: 15.h,
-                                                width: 15.w,
-                                                decoration: const BoxDecoration(
-                                                    color: Color(0xff029094),
-                                                    shape: BoxShape.circle),
-                                                child: const Icon(
-                                                  Icons.done,
-                                                  color: Colors.white,
-                                                  size: 10,
-                                                ),
-                                              )
-                                            ],
-                                          ),
-
-///////////
-
-                                          Row(
-                                            children: [
-                                              Image.asset(
-                                                "assets/images/delivery.png",
-                                              ),
-                                              SizedBox(width: 6.w),
-                                              Text(
-                                                "Free delivery",
-                                                style: TextStyle(
-                                                  fontFamily: "SofiaProR",
-                                                  fontSize: 12.sp,
-                                                  color: Color(0xff7E8392),
-                                                ),
-                                              ),
-                                              SizedBox(width: 17.w),
-                                              Icon(
-                                                Icons.access_time_rounded,
-                                                color: Color(0xffFE724C),
-                                                size: 15.sp,
-                                              ),
-                                              SizedBox(width: 6.w),
-                                              Text(
-                                                "10-15 mins",
-                                                style: TextStyle(
-                                                  fontFamily: "SofiaProR",
-                                                  fontSize: 12.sp,
-                                                  color: Color(0xff7E8392),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-
-///////////
-
-                                          SizedBox(height: 10),
-                                          Row(
-                                            children: [
-                                              Container(
-                                                height: 22.h,
-                                                width: 54.w,
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffF6F6F6),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.r)),
-                                                child: Center(
-                                                  child: Text(
-                                                    "Burger",
-                                                    style: TextStyle(
-                                                      fontFamily: "SofiaProR",
-                                                      fontSize: 12.sp,
-                                                      color: Color(0xff7E8392),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(width: 8.w),
-
-/////////
-                                              Container(
-                                                height: 22.h,
-                                                width: 60.w,
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffF6F6F6),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.r)),
-                                                child: Center(
-                                                  child: Text(
-                                                    "Chicken",
-                                                    style: TextStyle(
-                                                      fontFamily: "SofiaProR",
-                                                      fontSize: 12.sp,
-                                                      color: Color(0xff7E8392),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(width: 8.w),
-
-/////////
-                                              Container(
-                                                height: 22.h,
-                                                width: 70.w,
-                                                decoration: BoxDecoration(
-                                                    color: Color(0xffF6F6F6),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5.r)),
-                                                child: Center(
-                                                  child: Text(
-                                                    "Fast Food",
-                                                    style: TextStyle(
-                                                      fontFamily: "SofiaProR",
-                                                      fontSize: 12.sp,
-                                                      color: Color(0xff7E8392),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(width: 8.w),
-
-/////////
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ]),
+                              ),
                             ),
                           ),
 
@@ -857,7 +876,7 @@ class _HomePageState extends State<HomePage> {
 ///////////////////////////////////////
 
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      // mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Card(
                           elevation: 5,
@@ -1012,7 +1031,7 @@ class _HomePageState extends State<HomePage> {
 
 /////////////
 
-                        SizedBox(width: 20.w),
+                        SizedBox(width: 33.w),
                         Card(
                           elevation: 5,
                           shape: RoundedRectangleBorder(
@@ -1166,7 +1185,6 @@ class _HomePageState extends State<HomePage> {
 
                     SizedBox(height: 15.h),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Card(
                           elevation: 5,
@@ -1321,7 +1339,7 @@ class _HomePageState extends State<HomePage> {
 
 /////////////
 
-                        SizedBox(width: 20.w),
+                        SizedBox(width: 33.w),
                         Card(
                           elevation: 5,
                           shape: RoundedRectangleBorder(
